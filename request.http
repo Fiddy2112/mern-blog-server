@@ -1,3 +1,58 @@
-GET http://localhost:5000
+// REGISTER AUTH
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
 
-# GET mongodb://localhost:27017/mern-blog
+{
+    "username": "kai4",
+    "password": "1234"
+}
+
+###
+// Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "kai",
+    "password": "1234"
+}
+
+###
+//CREATE COURSE
+POST http://localhost:5000/api/courses
+Content-Type: application/json
+// Authorization: Bearer Access-token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZWRiOGQ4N2M2ZmUzMGE5Mzc3ZmUiLCJpYXQiOjE2NjIwMTIwMTV9.nSaIQBfUuWMWkVeQlCjyqPCf378fyVPj_FpgyaKKXf0
+
+
+{
+    "name":"HTML5",
+    "description":"html tutorial",
+    "videoId":"MnpVdM0d8UI",
+    "status":"LEARNING"
+}
+
+###
+// GET COURSES
+GET http://localhost:5000/api/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZTQ2YjVkNTVmYTYzYzMwNGJjM2MiLCJpYXQiOjE2NjIwMTUyMzV9.tiFkvpSYBh2vLPf0Jw12ceI8HkbRtyhjLtviwaC29co
+
+###
+// UPDATE COURSE
+PUT http://localhost:5000/api/courses/631048e0a65cb538a2d6a271
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZTQ2YjVkNTVmYTYzYzMwNGJjM2MiLCJpYXQiOjE2NjIwMTUyMzV9.tiFkvpSYBh2vLPf0Jw12ceI8HkbRtyhjLtviwaC29co
+
+{
+    "name": "Design patterns",
+    "description": "VUi VOI JAVASCRIPT",
+    "videoId": "l84-JRQ95V4",
+    "status": "TO LEARN"
+}
+
+###
+// DELETE course
+DELETE http://localhost:5000/api/courses/631049c850c0212e84b33b2c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZTQ2YjVkNTVmYTYzYzMwNGJjM2MiLCJpYXQiOjE2NjIwMjA3MzF9.Q8JofCVvXVXy00s2m9aY75eU7yxv6qu_TF25NgqJpr4
+
+ 
