@@ -6,9 +6,10 @@ const CourseSchema = new Schema({
   description: { type: String },
   image: { type: String },
   videoId: { type: String, required: true },
-  level: { type: String },
-  slug: { type: String, slug: "name", unique: true },
+  status: { type: String, enum: ["TO LEARN", "LEARNING", "LEARNED"] },
+  user: { type: Schema.Types.ObjectId, ref: "users" },
   createAt: { type: Date, default: Date.now },
+  updateAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model("courses", CourseSchema);
