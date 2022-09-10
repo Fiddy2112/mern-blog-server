@@ -77,6 +77,29 @@ class CourseController {
   }
 
   /**
+   * @route GET api/courses/show
+   * @desc show course
+   * @access Private
+   */
+
+  async showCourse(req, res) {
+    try {
+      const show = { slug: req.params.slug, user: req.userId };
+      const courseShow = await Course.findOne(show);
+      res.status(200).json({
+        success: true,
+        courseShow,
+      });
+    } catch (e) {
+      console.log(e);
+      res.status(500).json({
+        success: false,
+        message: "Internal server error",
+      });
+    }
+  }
+
+  /**
    * @route PUT api/courses/:id
    * @desc Update course
    * @access Private
