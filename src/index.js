@@ -12,7 +12,11 @@ const port = process.env.PORT || 8088;
 db.connect();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://mern-blog-app.onrender.com"],
+  })
+);
 
 app.use("/api/auth", authRouter);
 
