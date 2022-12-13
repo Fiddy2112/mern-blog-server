@@ -35,12 +35,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZ
 ###
 // GET ALL COURSES OF USER LOGIN
 GET http://localhost:5000/api/courses
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZTQ2YjVkNTVmYTYzYzMwNGJjM2MiLCJpYXQiOjE2NjIwMTUyMzV9.tiFkvpSYBh2vLPf0Jw12ceI8HkbRtyhjLtviwaC29co
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZTQ2YjVkNTVmYTYzYzMwNGJjM2MiLCJpYXQiOjE2NjQ0MjIzMzV9.9Q1bw40IJzRhEK9mMAavGkj0jmjrLrHBmRJov0QhQ6g
 
 ###
-// GET SLUG COURSE
-GET http://localhost:5000/api/courses/HTML5
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzBlZWRiOGQ4N2M2ZmUzMGE5Mzc3ZmUiLCJpYXQiOjE2NjI4MjAxMjJ9.Y0AxGnpacMgcs8SXiCYP0M6JhyxKGvzv0v5TO402IbI
+// GET COURSE
+GET http://localhost:5000/api/courses/learn/63971dca52fb580307ed7054
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzk3MWM0MTUyZmI1ODAzMDdlZDcwNGIiLCJpYXQiOjE2NzA4NDc3ODF9.lf6L-Jytcs87yTTqF0NWXg5dHeOaDfzBH7oZSZzwGn0
 
 ###
 // UPDATE COURSE

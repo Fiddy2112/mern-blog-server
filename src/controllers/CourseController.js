@@ -84,11 +84,17 @@ class CourseController {
 
   async showCourse(req, res) {
     try {
-      const show = { slug: req.params.slug, user: req.userId };
+      const show = { _id: req.params.id, user: req.userId };
       const courseShow = await Course.findOne(show);
+      if (!courseShow) {
+        return res.status(401).json({
+          success: false,
+          message: "Course not found or user not authorized",
+        });
+      }
       res.status(200).json({
         success: true,
-        courseShow,
+        course: courseShow,
       });
     } catch (e) {
       console.log(e);

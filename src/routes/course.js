@@ -5,10 +5,10 @@ const verifyToken = require("../middleware/auth");
 const courseController = require("../controllers/CourseController");
 
 // Login -> check token -> course
-router.post("/", verifyToken, courseController.create);
-router.get("/", verifyToken, courseController.getCourse);
-router.get("/:slug", verifyToken, courseController.showCourse);
+router.get("/learn/:id", verifyToken, courseController.showCourse);
 router.put("/:id", verifyToken, courseController.updateCourse);
 router.delete("/:id", verifyToken, courseController.deleteCourse);
+router.post("/", verifyToken, courseController.create);
+router.get("/", verifyToken, courseController.getCourse);
 
 module.exports = router;
